@@ -3,8 +3,6 @@
 #include <ctime>     // for time()
 #include <string>
 #include <vector>
-#include <chrono>
-#include <thread>
 
 
 
@@ -106,6 +104,8 @@ int main()
     int IAFact = std::rand() % iowaFacts.size();
     int MIFact = std::rand() % michiganFacts.size();
     char playagain;
+    char anotherfact;
+    char factfromsamestate;
 
     
     do
@@ -194,6 +194,48 @@ int main()
         {
             std::cout << michiganFacts[MIFact] << "\n";
         }
+        pauseLine();
+        std::cout << "Do you want to hear more facts? (y/n)\n";
+        std::cin >> anotherfact;
+        if (anotherfact == 'y' || anotherfact == 'Y')
+        {
+            std::cout << "Would you like a fact from the same state? (y/n)\n";
+            std::cin >> factfromsamestate;
+            if (factfromsamestate == 'y' || factfromsamestate == 'Y')
+            {
+                //Reload the random Facts to pick a new one
+                WIFact = std::rand() % wisconsinFacts.size();
+                MNFact = std::rand() % minnesotaFacts.size();
+                ILFact = std::rand() % illinoisFacts.size();
+                IAFact = std::rand() % iowaFacts.size();
+                MIFact = std::rand() % michiganFacts.size();
+                if (state == 1)
+                {
+                    std::cout << wisconsinFacts[WIFact] << "\n";
+                }
+                else if (state == 2)
+                {
+                    std::cout << minnesotaFacts[MNFact] << "\n";
+                }
+                else if (state == 3)
+                {
+                    std::cout << illinoisFacts[ILFact] << "\n";
+                }
+                else if (state == 4)
+                {
+                    std::cout << iowaFacts[IAFact] << "\n";
+                }
+                else if (state == 5)
+                {
+                    std::cout << michiganFacts[MIFact] << "\n";
+                }
+            }
+            else
+            {
+                //add logic to ask for what state
+            }
+        }
+
         
         pauseLine();
         std::cout << "Do you want to play again? (y/n): ";
