@@ -3,6 +3,7 @@
 #include <ctime>     // for time()
 #include <string>
 #include <vector>
+#include <cheerp/clientlib.h>
 
 
 
@@ -20,6 +21,7 @@ void clearScreen() {
     system("clear");
 #endif
 }
+
 
 int main()
 {
@@ -107,7 +109,7 @@ int main()
     char anotherfact;
     char factfromsamestate;
 
-    
+    [[cheerp::genericjs]]
     do
     {
         clearScreen();
