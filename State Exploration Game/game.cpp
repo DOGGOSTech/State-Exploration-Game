@@ -1,3 +1,6 @@
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
 #include <iostream>
 #include <cstdlib>   // for rand()
 #include <ctime>     // for time()
@@ -86,7 +89,7 @@ void pauseLine() {
 
 void clearScreen() {
 #ifdef _WIN32 // Check if compiling on Windows
-    system("cls");
+    cout << "\033[2J\033[1;1H";
 #else // Assume Unix-based if not Windows
     system("clear");
 #endif
