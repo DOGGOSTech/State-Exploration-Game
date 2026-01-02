@@ -1,6 +1,3 @@
-#ifdef __EMSCRIPTEN__
-#include <emscripten.h>
-#endif
 #include <iostream>
 #include <cstdlib>   // for rand()
 #include <ctime>     // for time()
@@ -209,11 +206,11 @@ void mainGame()
             if (factfromsamestate == 'y' || factfromsamestate == 'Y')
             {
                 //Reload the random Facts to pick a new one
-                WIFact = std::rand() % wisconsinFacts.size();
-                MNFact = std::rand() % minnesotaFacts.size();
-                ILFact = std::rand() % illinoisFacts.size();
-                IAFact = std::rand() % iowaFacts.size();
-                MIFact = std::rand() % michiganFacts.size();
+                WIFact = rand() % wisconsinFacts.size();
+                MNFact = rand() % minnesotaFacts.size();
+                ILFact = rand() % illinoisFacts.size();
+                IAFact = rand() % iowaFacts.size();
+                MIFact = rand() % michiganFacts.size();
                 if (state == 1)
                 {
                     std::cout << wisconsinFacts[WIFact] << "\n";
@@ -237,7 +234,34 @@ void mainGame()
             }
             else
             {
-                //add logic to ask for what state
+                cout << "Which state would you like a fact from?\n";
+                cout << "1. Wisconsin\n";
+                cout << "2. Minnesota\n";
+                cout << "3. Illinois\n";
+                cout << "4. Iowa\n";
+                cout << "5. Michigan\n";
+                cout << "Enter 1, 2, 3, 4, or 5: ";
+                cin >> state;
+                if (state == 1)
+                {
+                    std::cout << wisconsinFacts[WIFact] << "\n";
+                }
+                else if (state == 2)
+                {
+                    std::cout << minnesotaFacts[MNFact] << "\n";
+                }
+                else if (state == 3)
+                {
+                    std::cout << illinoisFacts[ILFact] << "\n";
+                }
+                else if (state == 4)
+                {
+                    std::cout << iowaFacts[IAFact] << "\n";
+                }
+                else if (state == 5)
+                {
+                    std::cout << michiganFacts[MIFact] << "\n";
+                }
             }
         }
 
