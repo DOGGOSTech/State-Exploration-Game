@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "State Exploration Game", "State Exploration Game\State Exploration Game.vcxproj", "{0831A34B-A2B5-49FD-A7F8-9FA23F9C1B34}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "State Exploration Game 50 States", "State Exploration Game 50 States\State Exploration Game 50 States.vcxproj", "{0BE1A077-43F5-443A-8DE0-6BE61D501E61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -18,5 +20,13 @@ Global
 		{0831A34B-A2B5-49FD-A7F8-9FA23F9C1B34}.Release|Win32.Build.0 = Release|Win32
 		{0831A34B-A2B5-49FD-A7F8-9FA23F9C1B34}.Release|x64.ActiveCfg = Release|x64
 		{0831A34B-A2B5-49FD-A7F8-9FA23F9C1B34}.Release|x64.Build.0 = Release|x64
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Debug|Win32.Build.0 = Debug|Win32
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Debug|x64.ActiveCfg = Debug|x64
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Debug|x64.Build.0 = Debug|x64
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Release|Win32.ActiveCfg = Release|Win32
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Release|Win32.Build.0 = Release|Win32
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Release|x64.ActiveCfg = Release|x64
+		{0BE1A077-43F5-443A-8DE0-6BE61D501E61}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 EndGlobal

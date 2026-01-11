@@ -146,11 +146,11 @@ void mainGame()
 
     
     clearScreen();
-     //   cout << "Welcome! My name is Fred and I will guide you on your journey through the states. Can I please have your name?\n";
-       // cin >> name;
-       // cout << "\n";
+        cout << "Welcome! My name is Fred and I will guide you on your journey through the states. Can I please have your name?\n";
+        cin >> name;
+        cout << "\n";
 
-       // money = 150000;
+        money = 150000;
         
         cout << "Well hello, " << name << ", pick the vehicle you want to take on this journey through the states!\n";
         cout << "You you have $" << money << " dollars to start with.\n";
