@@ -3,6 +3,7 @@
 #include <ctime>     // for time()
 #include <string>
 #include <vector>
+#include <fstream>
 
 
  // Seed random number generator
@@ -74,7 +75,43 @@ std::vector<std::string> michiganFacts = {
         "No matter where you are in Michigan, you are never more than 6 miles from water."
 };
 
+static const std::string& filename = "GameDATA";
+std::string name;
+int money;
 
+void saveGame() {
+    std::ofstream outFile(filename); // Open file for writing
+
+    if (outFile.is_open()) {
+        outFile << money << std::endl;      // Write score
+        outFile << name << std::endl; // Write player name
+        outFile.close();                    // Close the file
+        std::cout << "Game data saved to " << filename << std::endl;
+    } else {
+        std::cerr << "Error: Unable to open file for writing" << std::endl;
+    }
+}
+
+
+
+void loadGame() {
+    std::ifstream inFile(filename); // Open file for reading
+
+    if (inFile.is_open()) {
+        inFile >> money;           // Read score
+        inFile >> name;      // Read player name
+        inFile.close();            // Close the file
+        std::cout << "Game data loaded from " << filename << std::endl;
+    } else {
+        std::cerr << "Error: Unable to open file for reading" << std::endl;
+    }
+}
+
+
+
+
+
+char playagain = 'y';
 
 
 using namespace std;
@@ -97,27 +134,23 @@ void mainGame()
     srand(time(0));
     
     std::srand(static_cast<unsigned int>(std::time(0)));
-
-    string name;
     int state;
     int vehicle;
-    int money;
     int WIFact = std::rand() % wisconsinFacts.size();
     int MNFact = std::rand() % minnesotaFacts.size();
     int ILFact = std::rand() % illinoisFacts.size();
     int IAFact = std::rand() % iowaFacts.size();
     int MIFact = std::rand() % michiganFacts.size();
-    char playagain;
     char anotherfact;
     char factfromsamestate;
 
     
     clearScreen();
-        cout << "Welcome! My name is Fred and I will guide you on your journey through the states. Can I please have your name?\n";
-        cin >> name;
-        cout << "\n";
+     //   cout << "Welcome! My name is Fred and I will guide you on your journey through the states. Can I please have your name?\n";
+       // cin >> name;
+       // cout << "\n";
 
-        money = 150000;
+       // money = 150000;
         
         cout << "Well hello, " << name << ", pick the vehicle you want to take on this journey through the states!\n";
         cout << "You you have $" << money << " dollars to start with.\n";
@@ -273,8 +306,15 @@ void mainGame()
 }
 
 
+
 int main()
 {
-    mainGame();
+    do
+    {
+        loadGame();
+        mainGame();
+        saveGame();
+    }
+    while (playagain == 'y' || playagain == 'Y');
     return 0;
 }
